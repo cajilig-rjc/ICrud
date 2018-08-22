@@ -138,7 +138,7 @@ namespace ICrud.Data.Sql
                    foreach (var item in search)
                    {
                        x++;
-                       if (x == select.Count) query.Append(item.Name + " Like @" + item.Name);
+                       if (x == search.Count) query.Append(item.Name + " Like @" + item.Name);
                        else query.Append(item.Name + " Like @" + item.Name + " Or ");
 
                    }
@@ -198,7 +198,7 @@ namespace ICrud.Data.Sql
            foreach (var item in filter)
            {
                x++;
-               if (x == select.Count) query.Append(item.Name + " = @" + item.Name);
+               if (x == search.Count) query.Append(item.Name + " = @" + item.Name);
                else query.Append(item.Name + " = @" + item.Name + " And ");
 
            }
